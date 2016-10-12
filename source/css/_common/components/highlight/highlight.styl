@@ -1,14 +1,13 @@
 // https://github.com/chriskempson/tomorrow-theme
 
 @require "theme"
-@require "diff"
 
 // Placeholder: $code-block
 $code-block {
   overflow: auto;
   margin: 20px 0;
-  padding: 15px;
-  font-size $code-font-size;
+  padding: 8px 12px;
+  font-size: $code-font-size;
   color: $highlight-foreground;
   background: $highlight-background;
   line-height: $line-height-code-block;
@@ -17,12 +16,15 @@ $code-block {
 pre, code { font-family: $code-font-family; }
 
 code {
-  padding: 2px 4px;
-  word-wrap: break-all;
-  color: $highlight-foreground;
-  background: $highlight-background;
+  padding: 1px 3px;
+  margin: 0 3px;
+  word-break: break-word;
+  overflow: auto;
+  border: 1px solid rgba(215, 215, 215, 0.6);
+  color: $code-foreground;
+  background: $code-background;
   border-radius: $code-border-radius;
-  font-size $code-font-size;
+  font-size: $code-font-size;
 }
 
 pre {
@@ -33,11 +35,15 @@ pre {
     color: $highlight-foreground;
     background: none;
     text-shadow: none;
+    border: none;
   }
 }
 
 .highlight {
   @extend $code-block;
+
+  border-radius: 3px;
+  border: 1px solid rgba(221,221,221,.6);
 
   pre {
     border: none;
@@ -80,16 +86,12 @@ pre {
   .line { height: 20px; }
 }
 
+
 .gist table {
   width: auto;
 
   td { border: none; }
 }
-
-// For diff highlight
-pre .deletion { background: $highlight-deletion; }
-pre .addition { background: $highlight-addition; }
-pre .meta     { color: $highlight-purple; }
 
 pre {
 

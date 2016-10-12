@@ -1,9 +1,3 @@
-
-::selection {
-  background: $selection-bg;
-  color: $selection-color;
-}
-
 body {
   position: relative; // Required by scrollspy
   font-family: $font-family-base;
@@ -39,7 +33,7 @@ for headline in (1..6) {
   }
 }
 
-p { margin: 0 0 25px 0; }
+p { margin: 0 0 20px 0; }
 
 a {
   color: $link-color;
@@ -58,6 +52,16 @@ ul { list-style: none; }
 blockquote {
   margin: 0;
   padding: 0;
+  opacity: .6;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+
+blockquote p, blockquote pre, blockquote .highlight {
+    background-color: transparent;
+    border: none;
+    margin: 5px 0;
+    padding: 0;
 }
 
 img {
@@ -84,6 +88,7 @@ hr {
 
 blockquote {
   padding: 0 15px;
+  margin: 0 0 20px 0;
   color: $grey-dim;
   border-left: 4px solid $gray-lighter;
 

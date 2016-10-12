@@ -9,7 +9,7 @@
     {% set post_class = post_class + ' ' + 'post-sticky' %}
   {% endif %}
 
-  <article class="{{ post_class }}" itemscope itemtype="//schema.org/Article">
+  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
 
     {% if not headlessPost %}
       <header class="post-header">
@@ -137,13 +137,13 @@
 
       {# Gallery support #}
       {% if post.photos and post.photos.length %}
-        <div class="post-gallery" itemscope itemtype="//schema.org/ImageGallery">
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {% set COLUMN_NUMBER = 3 %}
           {% for photo in post.photos %}
             {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
               <a class="post-gallery-img fancybox"
                  href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
-                 itemscope itemtype="//schema.org/ImageObject" itemprop="url">
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
               </a>
             {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
@@ -171,7 +171,7 @@
           </div>
         {% elif theme.auto_excerpt.enable %}
           {% set content = post.content | striptags %}
-          {{ content.substring(0, theme.auto_excerpt.length) }}
+          {{ content.substring(0, theme.auto_excerpt.length) | replace('\n', "<p>", 'g') }}
           {% if content.length > theme.auto_excerpt.length %}...{% endif %}
 
           <div class="post-more-link text-center">
@@ -217,7 +217,7 @@
           <div class="post-nav-next post-nav-item">
             {% if post.next %}
               <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
+                上一篇：{{ post.next.title }}
               </a>
             {% endif %}
           </div>
@@ -225,7 +225,7 @@
           <div class="post-nav-prev post-nav-item">
             {% if post.prev %}
               <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                {{post.prev.title}} <i class="fa fa-chevron-right"></i>
+                下一篇：{{post.prev.title}}
               </a>
             {% endif %}
           </div>

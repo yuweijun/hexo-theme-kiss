@@ -8,10 +8,6 @@ table {
   table-layout: fixed;
   word-wrap: break-all;
 }
-table>tbody>tr {
-  &:nth-of-type(odd) { background-color: $table-row-odd-bg-color; }
-  &:hover { background-color: $table-row-hover-bg-color; }
-}
 
 caption, th, td {
   padding: $table-cell-padding;
@@ -21,12 +17,12 @@ caption, th, td {
 }
 
 th, td {
-  border-bottom: 3px solid $table-cell-border-bottom-color;
+  border-bottom: 2px solid $table-cell-border-bottom-color;
   border-right: 1px solid $table-cell-border-right-color;
 }
 
 th {
-  padding-bottom: 10px;
+  padding: 10px 5px;
   font-weight: $table-th-font-weight;
 }
 

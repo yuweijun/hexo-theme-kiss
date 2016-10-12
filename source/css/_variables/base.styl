@@ -62,10 +62,8 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
-
-$font-family-base         = $font-family-chinese, sans-serif
-$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
+$font-family-base         = sans-serif
+$font-family-base         = get_font_family('global'), sans-serif if get_font_family('global')
 
 $font-family-logo         = $font-family-base
 $font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
@@ -76,8 +74,8 @@ $font-family-headings     = get_font_family('headings'), $font-family-base if ge
 $font-family-posts        = $font-family-base
 $font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts')
 
-$font-family-monospace    = consolas, Menlo, $font-family-chinese, monospace
-$font-family-monospace    = get_font_family('codes'), consolas, Menlo, $font-family-chinese, monospace if get_font_family('codes')
+$font-family-monospace    = Menlo, monospace
+$font-family-monospace    = get_font_family('codes'), Menlo, monospace if get_font_family('codes')
 
 $font-family-icons        = 'FontAwesome'
 
@@ -131,11 +129,11 @@ $table-font-size                = 14px
 $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
-$table-cell-padding             = 8px
+$table-cell-padding             = 5px
 $table-cell-border-right-color  = $gainsboro
 $table-cell-border-bottom-color = $gray-lighter
 $table-row-odd-bg-color         = #f9f9f9
-$table-row-hover-bg-color       = $whitesmoke
+$table-row-hover-bg-color       = transparent
 
 
 
@@ -143,7 +141,9 @@ $table-row-hover-bg-color       = $whitesmoke
 // --------------------------------------------------
 $code-font-family               = $font-family-monospace
 $code-font-size                 = 13px
-$code-border-radius             = 3px
+$code-background                = $gainsboro
+$code-foreground                = $black-light
+$code-border-radius             = 4px
 
 
 

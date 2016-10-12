@@ -3,6 +3,7 @@
 *.log
 *.iml
 node_modules/
+bower_components
 
 # Ignore unused verdors' files
 source/vendors/fancybox/*
