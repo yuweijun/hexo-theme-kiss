@@ -27,8 +27,6 @@
 </div>
 
 <nav class="site-nav">
-  {% set hasSearch = theme.swiftype_key || theme.tinysou_Key || config.search %}
-
   {% if theme.menu %}
     <ul id="menu" class="menu">
       {% for name, path in theme.menu %}
@@ -43,27 +41,12 @@
         </li>
       {% endfor %}
 
-      {% if hasSearch %}
-        <li class="menu-item menu-item-search">
-          {% if theme.swiftype_key %}
-            <a href="javascript:;" class="st-search-show-outputs">
-          {% elseif config.search %}
-            <a href="javascript:;" class="popup-trigger">
-          {% endif %}
-            {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            {% endif %}
-            {{ __('menu.search') }}
-          </a>
-        </li>
-      {% endif %}
+      <li class="menu-item menu-item-search">
+        <a href="https://www.google.com.hk/search?q=site%3Awww.4e00.com%2Fblog%2F" class="popup-trigger">
+          <i class="menu-item-icon fa fa-search fa-fw"></i>{{ __('menu.search') }}
+        </a>
+      </li>
     </ul>
-  {% endif %}
-
-  {% if hasSearch %}
-    <div class="site-search">
-      {% include 'search.swig' %}
-    </div>
   {% endif %}
 </nav>
 
