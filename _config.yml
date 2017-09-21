@@ -30,10 +30,10 @@ canonical: true
 menu:
   home: /
   archives: /archives
-  #categories: /categories
-  #about: /about
-  #tags: /tags
-  #commonweal: /404.html
+  # categories: /categories
+  # about: /about
+  # tags: /tags
+  # commonweal: /404.html
 
 
 # Enable/Disable menu icons.
