@@ -22,8 +22,15 @@ th, td {
 }
 
 th {
+  text-align: center;
   padding: 10px 5px;
   font-weight: $table-th-font-weight;
 }
 
 td { border-bottom-width: 1px; }
+
+for col in (1..10) {
+  th.column-{col} {
+    width: (10 * col)%;
+  }
+}
