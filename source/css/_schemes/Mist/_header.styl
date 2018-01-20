@@ -1,14 +1,18 @@
 // Header
 // --------------------------------------------------
-.header { background: $whitesmoke; }
+.header {
+  border-top: 5px solid #333;
+  background: $whitesmoke;
+}
 .header-inner {
-  padding: 25px 0 20px;
+  padding: 5px 0;
   clearfix();
 
   +mobile() {
     width: auto;
     margin-bottom: 50px;
     padding: 10px;
+    border-bottom: 1px solid #e8e8e8;
   }
 }
 
