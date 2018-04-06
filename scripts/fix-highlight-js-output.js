@@ -2,11 +2,16 @@
  * 将命令输出的结果加上classname: output，以区别bash中的命令
  * 删除</span>标签后面多余的<br>标签
  */
+var fixEmptyLine = function(str) {
+    return str.replace(/<\/span><br>/g, '</span>').replace(/class="line">&gt;\s?/g, 'class="line output">');
+};
+
 hexo.extend.filter.register('after_post_render', function(data){
     console.log("after post render :", data.source);
-    data.content = data.content.replace(/class="line">&gt;\s?/g, 'class="line output">');
+    data.content = fixEmptyLine(data.content);
     return data;
 });
+
 hexo.extend.filter.register('before_post_render', function(data){
     console.log("before post render :", data.source);
     data.title = data.title.toLowerCase();
@@ -15,7 +20,7 @@ hexo.extend.filter.register('before_post_render', function(data){
 
 hexo.extend.filter.register('after_render:html', function(str, data){
     console.log("after render html :", data.path);
-    return str.replace(/<\/span><br>/g, '</span>').replace(/class="line">&gt;\s?/g, 'class="line output">');
+    return fixEmptyLine(str);
 });
 
 hexo.extend.filter.register('before_exit', function(){
