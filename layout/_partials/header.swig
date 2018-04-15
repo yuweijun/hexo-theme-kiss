@@ -40,7 +40,7 @@
       {% endfor %}
 
       <li class="menu-item menu-item-search">
-        <a href="https://www.google.com.hk/search?q=site%3Awww.4e00.com%2Fblog%2F" class="popup-trigger">
+        <a href="https://www.google.com.hk/search?q=site%3A{{ config.url }}{{ config.root }}" class="popup-trigger">
           <i class="menu-item-icon fa fa-search fa-fw"></i>{{ __('menu.search') }}
         </a>
       </li>
