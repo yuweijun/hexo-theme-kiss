@@ -6,9 +6,4 @@ var usd = function(str) {
               .replace(/(\$&gt;)(\s?)/g, '<i class="fa fa-usd"></i>$2');
 };
 
-hexo.extend.filter.register('after_post_render', function(data){
-    data.content = usd(data.content);
-    return data;
-});
-
 hexo.extend.filter.register('after_render:html', usd);

@@ -8,7 +8,6 @@ var fixEmptyLine = function(str) {
 
 hexo.extend.filter.register('after_post_render', function(data){
     console.log("after post render :", data.source);
-    data.content = fixEmptyLine(data.content);
     return data;
 });
 
