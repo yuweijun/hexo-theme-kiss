@@ -3,7 +3,10 @@
  * 删除</span>标签后面多余的<br>标签
  */
 var fixEmptyLine = function(str) {
-    return str.replace(/<\/span><br>/g, '</span>').replace(/class="line">&gt;\s?/g, 'class="line output">');
+    str = str.replace(/<\/span><br>/g, '</span>')
+             .replace(/class="line">&gt;\s?/g, 'class="line output">')
+             .replace(/class="comment">#&gt;\s?/g, 'class="comment output">');
+    return str;
 };
 
 hexo.extend.filter.register('after_post_render', function(data){

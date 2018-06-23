@@ -53,15 +53,16 @@ blockquote {
   margin: 0;
   padding: 0;
   opacity: .6;
-  letter-spacing: -1px;
-  font-style: italic;
+  background-color: rgba(200, 200, 200, .6);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 blockquote p, blockquote pre, blockquote .highlight {
-    background-color: transparent;
-    border: none;
-    margin: 5px 0;
-    padding: 0;
+  background-color: transparent;
+  border: none;
+  margin: 5px 0;
+  padding: 0;
 }
 
 img {
@@ -70,7 +71,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 hr {
   margin: 40px 0;
@@ -89,8 +89,8 @@ hr {
 blockquote {
   padding: 0 15px;
   margin: 0 0 20px 0;
-  color: $grey-dim;
-  border-left: 4px solid $gray-lighter;
+  color: $blockquote-dim;
+  border-left: 4px solid $blockquote-lighter;
 
   cite::before {
     content: "-";
