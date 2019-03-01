@@ -8,6 +8,7 @@ $code-block {
   overflow-y: hidden;
   margin: 20px 0;
   padding: 8px 12px;
+  word-break: keep-all;
   font-size: $code-font-size;
   color: $highlight-foreground;
   line-height: $line-height-code-block;
@@ -96,6 +97,22 @@ pre {
   .line.output, .comment.output {
     color: $highlight-output-color;
     padding-left: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1990px) {
+  .highlight ::-webkit-scrollbar {
+    width: 5px;
+    height: 4px;
+  }
+  .highlight ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+  }
+  .highlight ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+  }
+  .highlight:hover ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.5);
   }
 }
 
